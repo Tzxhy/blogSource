@@ -11,3 +11,6 @@ React相关：
 immutable.js, Flux， （Jest）Jasmine， Webpack
 
 
+display: table 相关的时候，绝对定位使用top和bottom不能设置高度，要用height；同理左右也不能决定高度。
+
+
