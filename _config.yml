@@ -4,9 +4,9 @@
 
 # Site
 title: CMeUp
-subtitle: Welcome to my blog, pleased to accept your remark. Chat with me if there is any problem, and my QQ is 1139723651.  
+subtitle: 记录一些学习心得，QQ:1139723651.  
 description: 
-author: Tzx
+author: 谭智轩
 #language: en
 language: zh-Hans
 timezone: UTC
@@ -71,7 +71,17 @@ theme: next
 baidu_analytics: 93e7437418d71c769278ecc4f708b80a
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
-deploy: 
-  type: git
+# deploy: 
+#   type: git
+#   repository: git@github.com:Tzxhy/Tzxhy.github.io.git
+#   branch: master
+deploy:
+# - type: sftp
+#   host: 10.224.9.110
+#   user: blog
+#   pass: tzxblog1233
+#   remotePath: /home/blog/res
+#   port: 22
+- type: git
   repository: git@github.com:Tzxhy/Tzxhy.github.io.git
   branch: master

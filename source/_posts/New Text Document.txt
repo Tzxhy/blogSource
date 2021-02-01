@@ -1,9 +1,0 @@
-常犯的错, 表单元素的值一开始就获取,再使用. 这是不对的. 要使用时才获取.
-
-2,使用border-image时, 一定记得设置border-style, 否则设置的border-width失效!!!
-
-3,读取iframe中的元素, 要先获取 var content = document.getElementById('iframeID').contentWindow.document;   再在这个content中进行查找即可.
-
-
-
-4, nodejs模块，全局安装的话，就可以直接使用，比如全局安装了webpack， 则可以直接使用webpack ， 若是本地安装的，则只能./.../到webpack.cmd才能运行，或者在package.json里添加scripts, build： webpack, 即可方便的调用本地的webpack
