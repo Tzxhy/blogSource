@@ -2,7 +2,7 @@
 import {
     Switch,
     Route,
-    BrowserRouter as Router,
+    HashRouter as Router,
     Link,
 } from 'react-router-dom';
 import React, { useMemo, useRef, useState } from 'react';
@@ -16,7 +16,7 @@ import {
 import 'antd/dist/antd.css';
 import Layout, { Content } from 'antd/lib/layout/layout';
 import Sider from 'antd/lib/layout/Sider';
-import { ROUTER_BASENAME, SIDEBAR_COLLAPSED } from './constants/key';
+import { SIDEBAR_COLLAPSED } from './constants/key';
 
 function App() {
     const [collapsed, setCollapsed] = useState(localStorage.getItem(SIDEBAR_COLLAPSED) === 'true');
@@ -26,10 +26,11 @@ function App() {
     }
     const defaultSelectedKeys = useRef(['']);
     useMemo(() => {
-        defaultSelectedKeys.current = [window.location.pathname.replace(ROUTER_BASENAME, '')];
+        defaultSelectedKeys.current = [window.location.hash.replace('#', '')];
+        
     }, []);
     return (
-        <Router basename={ROUTER_BASENAME}>
+        <Router>
             <Layout style={{height: '100vh'}}>
                 <Sider collapsible collapsed={collapsed} onCollapse={toggleCollapsed}>
                     <Menu
