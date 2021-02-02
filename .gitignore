@@ -2,7 +2,7 @@
 Thumbs.db
 *.log
 node_modules/
-public/
+/public/
 .deploy*/
 _config.yml
 properties
