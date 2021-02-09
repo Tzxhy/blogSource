@@ -1,7 +1,9 @@
 ---
 title: git 学习笔记(三)
 date: 2016-08-31 19:14:14
-tags: git笔记
+tags: 
+- git笔记
+categories: git
 ---
 
 

@@ -2,7 +2,10 @@
 title: ng-nodejs偶发502
 date: 2019-03-07 15:32:32
 tags:
-categories:
+- nginx
+- nodejs
+- 502
+categories: 案例
 ---
 # ng + node服务，导致ng报错：upstream提前关闭连接？
 大前提是ng作为反向代理，upstream为node集群。

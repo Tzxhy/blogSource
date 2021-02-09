@@ -1,8 +1,9 @@
 ---
 title: es5拾漏
 date: 2019-03-04 18:57:53
-tags: es5
-categories: js
+tags: 
+- es5
+categories: ES
 ---
 # es5中被我遗忘的点
 ### 属性描述符

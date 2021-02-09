@@ -1,7 +1,9 @@
 ---
 title: vue组件开发之组件通信
 date: 2017-08-24 18:43:34
-tags: vue 组件开发
+tags:
+- 组件通信
+categories: Vue
 ---
 
 最近的学习工作中都用到了饿了么的[element-ui](http://element.eleme.io), 以及移动端的[Mint-ui](https://mint-ui.github.io/#!/zh-cn), 借此机会, 想深入学习Vue的组件开发流程及原理, 故写此篇博客, 记录所学及所感. 

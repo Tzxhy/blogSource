@@ -1,7 +1,9 @@
 ---
 title: docker驾驭姿势
 date: 2019-06-06 13:30:48
-tags: docker
+tags: 
+- docker
+categories: 虚拟化
 ---
 
 ## base

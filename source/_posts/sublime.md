@@ -2,6 +2,7 @@
 title: sublime
 date: 2016-10-30 22:41:58
 tags:
+published: false
 ---
 
 Ct Sh P：命令

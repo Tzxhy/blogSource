@@ -1,7 +1,10 @@
 ---
 title: 'css中有关display:table相关属性的解释'
 date: 2017-06-15 11:36:21
-tags: css table
+tags:
+- css
+- table
+categories: CSS
 ---
 
 # display:table相关属性

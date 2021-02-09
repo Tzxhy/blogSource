@@ -2,8 +2,8 @@
 title: linux入门命令行
 date: 2019-03-07 15:23:35
 tags:
-categories:
-- linux
+- 命令行入门
+categories: linux
 ---
 
 # linux入门走一波

@@ -2,7 +2,9 @@
 title: css媒体查询
 date: 2019-03-04 17:53:01
 tags:
-categories:
+- css
+- 媒体查询
+categories: CSS
 ---
 
 # css媒体查询

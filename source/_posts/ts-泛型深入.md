@@ -1,8 +1,9 @@
 ---
 title: ts 泛型深入
 date: 2021-02-08 16:53:50
-tags: typescript
-categories: typescript
+tags:
+- 泛型
+categories: TypeScript
 ---
 
 

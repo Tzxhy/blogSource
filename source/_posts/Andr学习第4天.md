@@ -1,8 +1,9 @@
 ---
 title: Andr学习第4天
 categories:
-  - Andr
+  - Android
 date: 2019-12-11 22:25:48
+published: false
 tags:
 ---
 

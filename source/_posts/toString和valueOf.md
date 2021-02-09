@@ -2,8 +2,8 @@
 title: toString和valueOf
 date: 2019-03-07 14:07:02
 tags:
-categories:
-- js
+- toString or valueOf
+categories: ES
 ---
 # toString and valueOf ???
 

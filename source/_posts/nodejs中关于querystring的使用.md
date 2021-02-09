@@ -1,7 +1,10 @@
 ---
 title: nodejs中关于querystring的使用
 date: 2017-06-09 15:07:06
-tags: nodejs querystring
+tags:
+- nodejs
+- querystring
+categories: Nodejs
 ---
 
 # querystring

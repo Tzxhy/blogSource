@@ -2,10 +2,9 @@
 title: react单例模式
 date: 2019-03-07 14:22:40
 tags:
-- react
+- React
 - 单例
-categories:
-- react
+categories: React
 ---
 # react单例组件的实现方式
 说到react的单例，大家可能一哈子就想到了像Alert啊，弹层啊、Confirm啊之类的。没毛病。单例嘛，就是全局唯一一个实例，不可能同时出现两个嘛。是的。极大部分业务情况下是这样的。所以，怎么实现一个单例组件，是个值得思考的问题。

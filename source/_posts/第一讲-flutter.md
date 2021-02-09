@@ -2,7 +2,8 @@
 title: flutter 介绍
 date: 2019-12-11 22:25:48
 tags:
-categories:
+- flutter
+categories: flutter
 ---
 
 ## 团队介绍

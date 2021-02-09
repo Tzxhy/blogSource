@@ -4,8 +4,7 @@ date: 2019-09-19 14:20:00
 tags:
 - flutter
 - flutter入门
-categories:
-- flutter
+categories: flutter
 ---
 
 # 第一篇

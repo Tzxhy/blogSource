@@ -4,7 +4,7 @@ date: 2019-03-05 10:37:42
 tags:
 - js
 - 继承
-categories: js
+categories: ES
 ---
 # 关于继承
 看各种资料，介绍继承，从这么几方面来说：

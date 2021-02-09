@@ -2,9 +2,9 @@
 title: flutter源码学习(2)
 date: 2020-01-28 19:24:31
 tags:
-categories:
 - flutter
 - services
+categories: flutter
 ---
 
 本篇深入 lib/services。

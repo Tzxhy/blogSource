@@ -2,8 +2,8 @@
 title: typescript学习2
 date: 2019-04-03 13:21:04
 tags:
-categories:
-- typescript
+- TypeScript
+categories: TypeScript
 ---
 
 ## 函数

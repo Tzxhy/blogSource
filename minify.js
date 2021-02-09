@@ -33,7 +33,8 @@ function getAllFiles(dir) {
     return filesList
 }
 
-const allFiles = getAllFiles(path.resolve('public')).filter(p => ['.js', '.css', '.html'].indexOf(path.extname(p)) >= 0)
+// const allFiles = getAllFiles(path.resolve('public')).filter(p => ['.js', '.css', '.html'].indexOf(path.extname(p)) >= 0)
+const allFiles = getAllFiles(path.resolve('public')).filter(p => ['.html'].indexOf(path.extname(p)) >= 0)
 
 async function main() {
     const ps = allFiles.map(file => {

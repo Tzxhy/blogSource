@@ -1,7 +1,10 @@
 ---
 title: webpack-CommonsChunkPlugin实战操作
 date: 2017-10-27 19:02:46
-tags: webpack CommonsChunkPlugin
+tags:
+- Webpack
+- CommonsChunkPlugin
+categories: 构建工具
 ---
 
 近来学习webpack了，有了解到CommonsChunkPlugin插件用来解决长效缓存的问题。那么问题来了，怎么用？怎么用好？

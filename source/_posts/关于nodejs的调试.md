@@ -2,7 +2,9 @@
 title: 关于nodejs的调试
 date: 2019-03-07 14:11:55
 tags:
-categories:
+- Nodejs
+- 调试
+categories: Nodejs
 ---
 # 关于调试
 ## 需要注意的

@@ -2,7 +2,9 @@
 title: Node.js中循环require
 date: 2019-03-05 13:07:55
 tags:
-categories:
+- nodejs
+- 循环引用
+categories: Nodejs
 ---
 # 关于循环require的骚走位
 ## 前言

@@ -2,7 +2,9 @@
 title: Node.js中强制使 require 缓存失效
 date: 2019-04-22 15:44:37
 tags:
-categories:
+- nodejs
+- 缓存
+categories: Nodejs
 ---
 require.cache#
 Added in: v0.3.0

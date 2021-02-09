@@ -2,7 +2,8 @@
 title: GraphQL入门-三
 date: 2019-03-28 10:29:07
 tags:
-categories:
+- GraphQL
+categories: GraphQL
 ---
 这篇讲 GraphQL 的其他内容。
 

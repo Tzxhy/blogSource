@@ -2,7 +2,8 @@
 title: CSP简介
 date: 2019-03-07 14:43:07
 tags:
-categories:
+- csp
+categories: HTTP
 ---
 # 关于网络请求的CSP相关
 啥是CSP？https://developer.mozilla.org/zh-CN/docs/Web/HTTP/CSP。简而言之，就是另一个能保证内容安全的浏览器方式实现安全的方式。

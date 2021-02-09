@@ -2,6 +2,7 @@
 title: js中replace函数用法详解
 date: 2017-06-15 11:09:05
 tags: js 函数
+categories: ES
 ---
 
 

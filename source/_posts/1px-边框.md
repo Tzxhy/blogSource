@@ -2,7 +2,8 @@
 title: 1px 边框
 date: 2019-12-11 22:25:48
 tags:
-categories:
+- 边框
+categories: CSS
 ---
 
 本文整理了常用的1物理像素边框的实现方法及原理。

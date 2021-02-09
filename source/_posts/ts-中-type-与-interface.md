@@ -2,8 +2,9 @@
 title: ts 中 type 与 interface
 date: 2019-04-06 11:46:12
 tags:
-categories:
-- typescript
+- type
+- interface
+categories: TypeScript
 ---
 
 ## 

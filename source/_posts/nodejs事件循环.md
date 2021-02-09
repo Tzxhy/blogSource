@@ -2,6 +2,9 @@
 title: nodejs事件循环
 date: 2019-02-16 23:52:18
 tags:
+- nodejs
+- event loop
+categories: Nodejs
 ---
 
 # reason

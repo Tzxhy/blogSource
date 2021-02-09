@@ -1,11 +1,9 @@
 ---
 title: v11.10 nodejs学习(一)
 date: 2019-02-21 18:30:39
-categories:
-- nodejs
 tags:
-- nodejs
-- v11
+- Nodejs
+categories: Nodejs
 ---
 
 __学而时更之，不亦乐乎__

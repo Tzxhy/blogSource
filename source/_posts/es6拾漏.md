@@ -2,7 +2,8 @@
 title: es6拾漏
 date: 2019-03-04 19:03:23
 tags:
-categories:
+- es6
+categories: ES
 ---
 # es6中被我遗忘的点
 1. 变量解构可以嵌套很多层，但平时总是习惯解构一层，再手动再解构一层。

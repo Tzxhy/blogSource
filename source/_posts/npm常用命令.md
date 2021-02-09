@@ -2,6 +2,8 @@
 title: npm常用命令
 date: 2016-10-31 10:20:01
 tags:
+- npm
+categories: Nodejs
 ---
 
 npm (node package manager)是node模块管理工具，类似与Linux下的yum和apt。

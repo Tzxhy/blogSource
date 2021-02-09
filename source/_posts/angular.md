@@ -2,6 +2,7 @@
 title: angular
 date: 2016-10-30 13:05:09
 tags:
+published: false
 ---
 在&lt;li&gt;元素标签上的元素属性ng-repeat="phone in phones"是一个Angular转发器指令
 花括号包围的表达式（{{phone.name}}和{{phone.snippet}}）将被替换成表达式的值。

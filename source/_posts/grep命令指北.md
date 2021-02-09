@@ -3,8 +3,8 @@ title: grep命令指北
 date: 2019-03-07 14:58:56
 tags:
 - 命令行
-categories:
-- linux
+- grep
+categories: linux命令
 ---
 
 # grep命令指北

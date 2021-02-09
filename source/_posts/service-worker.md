@@ -1,10 +1,7 @@
 ---
 title: service worker
 date: 2019-03-07 15:49:43
-tags:
-- service worker
-categories:
-- 缓存
+published: false
 ---
 
 # serviceWorker

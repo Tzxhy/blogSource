@@ -2,7 +2,9 @@
 title: makefile
 date: 2019-07-04 10:41:00
 tags:
-categories:
+- makefile
+- 流程化构建
+categories: C++
 ---
 
 概述

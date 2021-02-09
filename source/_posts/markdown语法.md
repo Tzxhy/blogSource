@@ -1,7 +1,9 @@
 ---
 title: markdown语法
 date: 2016-08-27 08:17:59
-tags: 教程 markdown语法
+tags: 
+- markdown
+categories: 工具
 ---
 Markdown是一种极简的『标记语言』，将文本转为HTML，通常为我大码农所用。其不追求大而全，简洁至上，正所谓不求最贵，只求最好！
 

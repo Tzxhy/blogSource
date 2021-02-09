@@ -5,8 +5,7 @@ tags:
 - Node.js
 - libuv
 - event loop
-categories:
-- libuv
+categories: Nodejs
 ---
 
 ## 开场白

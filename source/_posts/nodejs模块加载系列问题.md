@@ -1,7 +1,10 @@
 ---
 title: nodejs模块加载系列问题
 date: 2017-06-06 09:11:33
-tags: nodejs 模块加载
+tags:
+- nodejs
+- 模块加载
+categories: Nodejs
 ---
 
 # nodejs模块加载机制

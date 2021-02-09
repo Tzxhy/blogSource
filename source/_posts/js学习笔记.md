@@ -1,7 +1,9 @@
 ---
 title: js学习笔记
 date: 2016-08-28 19:31:59
-tags: js 笔记
+tags: 
+- js
+categories: ES
 ---
 ``` bash
 	var scope = "global";

@@ -3,8 +3,7 @@ title: flutter 中路由详解
 tags:
   - flutter-route
 date: 2019-10-26 22:13:48
-categories:
-- flutter
+categories: flutter
 ---
 
 

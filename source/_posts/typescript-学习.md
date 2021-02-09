@@ -2,8 +2,8 @@
 title: typescript 学习(1)
 date: 2019-04-02 18:30:39
 tags:
-categories:
-- typescript
+- TypeScript
+categories: TypeScript
 ---
 工作需要，开始学习 ts（只记点难的）。
 

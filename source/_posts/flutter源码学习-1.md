@@ -2,9 +2,9 @@
 title: flutter源码学习(1)
 date: 2020-01-27 19:24:31
 tags:
-categories:
 - flutter
 - foundation
+categories: flutter
 ---
 
 本篇深入 lib/foundation。后面的文章都基于191版本。

@@ -4,9 +4,7 @@ date: 2019-03-04 15:57:24
 tags:
 - css3
 - animation
-categories:
-- css
-- css3
+categories: CSS
 ---
 
 # css3动画

@@ -2,8 +2,8 @@
 title: GraphQL入门(2)
 date: 2019-03-27 18:03:07
 tags:
-categories:
 - GraphQL
+categories: GraphQL
 ---
 
 上次说了 query 和 update ，这次说 schema 和 type 。

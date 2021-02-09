@@ -1,7 +1,9 @@
 ---
 title: Git学习笔记(二)
 date: 2016-08-26 23:05:27
-tags: Git 笔记
+tags: 
+- git笔记
+categories: git
 ---
 
 ## Git 分支

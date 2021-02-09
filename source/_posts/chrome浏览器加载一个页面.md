@@ -2,8 +2,8 @@
 title: chrome浏览器加载一个页面
 date: 2019-03-07 14:33:23
 tags:
-categories:
 - chrome
+categories: 浏览器
 ---
 
 # 从输入一个地址开始说起

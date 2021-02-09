@@ -2,7 +2,8 @@
 title: eletron 入坑
 date: 2019-04-26 12:54:02
 tags:
-categories:
+- electron
+categories: 桌面端
 ---
 [官网](https://electronjs.org/docs/tutorial/about)
 

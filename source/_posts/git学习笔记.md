@@ -1,7 +1,9 @@
 ---
 title: git学习笔记(一)
 date: 2016-08-26 15:25:51
-tags: 笔记 git
+tags: 
+- git笔记
+categories: git
 ---
 
 ## 	起步

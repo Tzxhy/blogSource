@@ -2,7 +2,9 @@
 title: flutter状态管理调研
 date: 2020-03-02 18:14:11
 tags:
-categories:
+- flutter
+- 状态管理
+categories: flutter
 ---
 
 今天主要探讨的是 flutter 中常用的状态管理方案：BLoC 和 Provider，Redux。

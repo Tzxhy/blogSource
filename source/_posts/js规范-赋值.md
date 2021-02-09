@@ -2,9 +2,8 @@
 title: js规范--赋值
 date: 2019-04-07 22:22:46
 tags:
-- js grammer
-categories:
-- javascript
+- js grammar
+categories: ES
 ---
 
 今天遇到一个小问题：

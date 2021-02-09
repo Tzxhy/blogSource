@@ -2,6 +2,7 @@
 title: input file 注意点
 date: 2017-07-11 13:27:05
 tags: input[type=file]
+categories: HTML
 ---
 
 

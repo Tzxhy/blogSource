@@ -1,11 +1,9 @@
 ---
 title: 编写flutter中叶节点组件
 tags:
-  - flutter
-  - dart
-categories:
-  - dart
-  - flutter
+- flutter
+- 叶节点
+categories: flutter
 date: 2019-09-18 20:30:11
 ---
 

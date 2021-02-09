@@ -3,8 +3,8 @@ title: flutter 学习线路图
 date: 2020-02-12 09:02:17
 tags:
 - flutter
-categories:
-- flutter
+- 学习路线
+categories: flutter
 ---
 
 前端 flutter 学习线路图：

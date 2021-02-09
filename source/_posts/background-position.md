@@ -2,7 +2,9 @@
 title: background-position
 date: 2019-03-04 18:43:43
 tags:
-categories:
+- css
+- background
+categories: CSS
 ---
 
 # 关于background-position

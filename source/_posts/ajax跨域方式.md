@@ -2,6 +2,7 @@
 title: ajax跨域方式
 date: 2017-06-04 09:18:34
 tags: ajax
+categories: 网络请求
 ---
 
 # 跨域方式

@@ -3,8 +3,7 @@ title: GraphQL入门(1)
 date: 2019-03-26 18:26:51
 tags:
 - GraphQL
-categories:
-- GraphQL
+categories: GraphQL
 ---
 [官网](https://graphql.github.io)，可以理解成翻译官方文档。在下篇中将来一发实战。
 # 介绍

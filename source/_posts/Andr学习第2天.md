@@ -2,8 +2,9 @@
 title: Andr学习第2天
 date: 2020-03-10 21:02:36
 tags:
+published: false
 categories:
-- Andr
+- Android
 ---
 
 学习范围：第二章-探究 Activity

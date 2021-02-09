@@ -1,9 +1,7 @@
 ---
 title: 浏览器API
 date: 2019-03-07 15:48:31
-tags:
-categories:
-- browser
+published: false
 ---
 # 复制文字滴功能
 ## 前言
