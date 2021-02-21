@@ -12,13 +12,13 @@ import {
 
 export const routers = [
     {
-        title: '工具1',
+        title: '词组分类',
         path: '/tool1',
         page: Tool1,
         icon: PieChartOutlined,
     },
     {
-        title: '工具2',
+        title: '省市合并',
         path: '/tool2',
         page: Tool2,
         icon: PieChartOutlined,
