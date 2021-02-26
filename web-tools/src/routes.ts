@@ -1,5 +1,5 @@
-import Tool1 from './pages/getTypes';
-import Tool2 from './pages/tool2';
+
+import StringTools from './pages/string-tools';
 import {
     AppstoreOutlined,
     MenuUnfoldOutlined,
@@ -12,15 +12,9 @@ import {
 
 export const routers = [
     {
-        title: '词组分类',
-        path: '/tool1',
-        page: Tool1,
-        icon: PieChartOutlined,
-    },
-    {
-        title: '省市合并',
-        path: '/tool2',
-        page: Tool2,
+        title: '语句类工具',
+        path: '/string-tool',
+        page: StringTools,
         icon: PieChartOutlined,
     },
 ]

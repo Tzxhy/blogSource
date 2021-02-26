@@ -1,33 +1,11 @@
-import { Button, Divider, Empty, Form, Input, Layout, message, Space } from 'antd';
+import { Button, Divider, Empty, Form, Input, Layout, message, Radio, RadioChangeEvent, Space } from 'antd';
 import { Content } from 'antd/lib/layout/layout';
-import Sider from 'antd/lib/layout/Sider';
 import React, { ChangeEvent, useRef, useState } from 'react';
-import { tip } from './tips';
-const { TextArea } = Input;
+
+import useProvince from './useProvince'
+import useTypeGroup from './useTypeGroup'
 
 
-
-function split(str: string) {
-    const pairs = str.split('\n')
-    const ret: Record<string, string[]> = {}
-    pairs.forEach(p => {
-        const pair = p.split('	')
-        if (pair[0] in ret) {
-            ret[pair[0]].push(pair[1])
-        } else {
-            ret[pair[0]] = [pair[1]]
-        }
-    })
-    let retStr = []
-    for (const k in ret) {
-        if (ret[k].length === 1 && ret[k][0] === k) { // 直辖市
-            retStr.push(k)
-        } else {
-            retStr.push(`${k}（${ret[k].map(i => `${i}市`).join('；')}）`)
-        }
-    }
-    return retStr.join('，')
-}
 const layout = {
     labelCol: { span: 8 },
     wrapperCol: { span: 16 },
@@ -35,29 +13,52 @@ const layout = {
 const tailLayout = {
     wrapperCol: { offset: 8, span: 16 },
 };
-export default function Tool2() {
+
+enum StringToolType {
+    GROUP,
+    PROVINCE_CITY,
+}
+
+export default function StringTools() {
     const v = useRef('')
-    const [s, ss] = useState('')
+    const [s, ss] = useState<React.ReactNode>(null)
     const [lines, updateLines] = useState(0)
-    const [form] = Form.useForm();
-    const resultRef = useRef<HTMLParagraphElement>(null);
+    const [form] = Form.useForm()
+    const resultRef = useRef<HTMLParagraphElement>(null)
+    const toolType = useRef<StringToolType>(StringToolType.GROUP)
+
+    // 顺序需要与 StringToolType 保持一致
+    const actions = [
+        useTypeGroup(),
+        useProvince(),
+    ]
 
     function changeValue(e: ChangeEvent<HTMLTextAreaElement>) {
         v.current = e.target.value
         updateLines(v.current.split('\n').length)
     }
-    function compute() {
+
+    async function compute() {
         if (!v.current) return
-        ss(split(v.current))
+        
+        const compute = actions[toolType.current].compute
+        const renderResult = actions[toolType.current].renderResult
+        const value = await compute(v.current)
+        const renderRes: React.ReactNode = renderResult(value)
+        ss(renderRes)
     }
 
     function copy() {
         window.getSelection()!.removeAllRanges()
 
-        const range = document.createRange()
+        const input = document.createElement('input')
+        input.value = actions[toolType.current].getStringValue()
         
-        range.selectNode(resultRef.current as HTMLParagraphElement)
-        window.getSelection()!.addRange(range)
+        input.style.position = 'fixed'
+        input.style.left = '-9999px'
+
+        document.body.appendChild(input)
+        input.select()
 
         const msg = document.execCommand('copy')
         if (msg) {
@@ -65,6 +66,7 @@ export default function Tool2() {
         }
 
         window.getSelection()!.removeAllRanges()
+        input.remove()
     }
 
     function clear() {
@@ -75,9 +77,18 @@ export default function Tool2() {
         ss('')
     }
 
+    function selectChange(v: RadioChangeEvent) {
+        toolType.current = v.target.value;
+    }
+
+    const options = [
+        { label: '词组分类', value: StringToolType.GROUP, },
+        { label: '省市合并', value: StringToolType.PROVINCE_CITY, },
+    ]
+
     return (
         <Layout style={{display: 'flex', flexDirection: 'column', height: '100%'}}>
-            <h1 style={{fontSize: 32}}>省市合并</h1>
+            <h1 style={{fontSize: 32}}>语句类工具</h1>
             <Divider />
             <Layout style={{marginTop: 50, display: 'flex', flexDirection: 'row', alignItems: 'stretch'}}>
                 <Content style={{flex: 1}}>
@@ -88,6 +99,11 @@ export default function Tool2() {
                         name="basic"
                         initialValues={{ remember: true }}
                     >
+                        <Form.Item
+                            label="计算类型"
+                        >
+                            <Radio.Group options={options} onChange={selectChange} defaultValue={toolType.current} />
+                        </Form.Item>
                         <Form.Item
                             label="1-输入数据"
                             name="originData"
@@ -113,9 +129,14 @@ export default function Tool2() {
                         
                         {
                             s ? <div style={{padding: 16, backgroundColor: 'white', borderRadius: 8,}}>
-                                <p ref={resultRef}>{s}</p>
+                                {
+                                    s
+                                }
+                                
                                 <Space size="large" style={{display: 'flex', justifyContent: 'center'}}>
-                                    <Button type="primary" onClick={copy}>拷贝数据</Button>
+                                    {
+                                        actions[toolType.current].showCopyButton ? <Button type="primary" onClick={copy}>拷贝数据</Button> : null
+                                    }
                                     <Button type="default" onClick={clear}>清空数据</Button>
                                 </Space>
                             </div> : <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
