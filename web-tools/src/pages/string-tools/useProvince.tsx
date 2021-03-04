@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import { UseAction } from './interface';
+import { PROVINCE } from './mockData';
 
 function split(str: string) {
     const pairs = str.split('\n')
@@ -45,6 +46,7 @@ const useTypeGroup: () => UseAction = function() {
         compute,
         showCopyButton: true,
         getStringValue,
+        getMockData: () => PROVINCE,
     }
 }
 

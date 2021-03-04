@@ -2,8 +2,9 @@
 import {
     Switch,
     Route,
-    HashRouter as Router,
+    BrowserRouter as Router,
     Link,
+    Redirect,
 } from 'react-router-dom';
 import React, { useMemo, useRef, useState } from 'react';
 import {
@@ -18,6 +19,8 @@ import Layout, { Content } from 'antd/lib/layout/layout';
 import Sider from 'antd/lib/layout/Sider';
 import { SIDEBAR_COLLAPSED } from './constants/key';
 
+const BASE_PATH = '/web-tools';
+
 function App() {
     const [collapsed, setCollapsed] = useState(localStorage.getItem(SIDEBAR_COLLAPSED) === 'true');
     function toggleCollapsed() {
@@ -26,36 +29,42 @@ function App() {
     }
     const defaultSelectedKeys = useRef(['']);
     useMemo(() => {
-        defaultSelectedKeys.current = [window.location.hash.replace('#', '')];
-        
+        defaultSelectedKeys.current = [window.location.hash.replace(BASE_PATH, '')];
     }, []);
+
     return (
-        <Router>
-            <Layout style={{height: '100vh'}}>
-                <Sider collapsible collapsed={collapsed} onCollapse={toggleCollapsed}>
-                    <Menu
-                        defaultSelectedKeys={defaultSelectedKeys.current}
-                        mode="inline"
-                        theme="dark"
-                        inlineCollapsed={false}
-                        >
-                            {
-                                routers.map((route, idx) => <Menu.Item key={route.path} icon={React.createElement(route.icon)}>
-                                    <Link to={route.path}>{route.title}</Link>
-                                </Menu.Item>)
-                            }
-                    </Menu>
-                </Sider>
-                <Content style={{flexGrow: 1, padding: 16, overflow: 'auto'}}>
-                    <Switch>
+        <Layout style={{height: '100vh'}}>
+            <Sider collapsible collapsed={collapsed} onCollapse={toggleCollapsed}>
+                <Menu
+                    defaultSelectedKeys={defaultSelectedKeys.current}
+                    mode="inline"
+                    theme="dark"
+                    inlineCollapsed={false}
+                    >
                         {
-                            routers.map(route => <Route key={route.path} children={React.createElement(route.page)} path={route.path} />)
+                            routers.filter(r => r.menu).map((route, idx) => <Menu.Item key={route.path} icon={route.icon && React.createElement(route.icon)}>
+                                <Link to={route.path}>{route.title}</Link>
+                            </Menu.Item>)
                         }
-                    </Switch>
-                </Content>
-            </Layout>
-        </Router>
+                </Menu>
+            </Sider>
+            <Content style={{flexGrow: 1, padding: 16, overflow: 'auto'}}>
+                <Switch>
+                    {
+                        routers.map(route => <Route exact={route.exact} key={route.path} children={React.createElement(route.page)} path={route.path} />)
+                    }
+                    <Redirect from='/' to={routers[0].path} />
+                </Switch>
+            </Content>
+        </Layout>
     );
 }
 
-export default App;
+function RouterApp() {
+    return <Router basename={BASE_PATH}>
+        <App />
+    </Router>
+}
+
+
+export default RouterApp;

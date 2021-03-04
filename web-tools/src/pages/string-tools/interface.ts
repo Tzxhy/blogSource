@@ -9,4 +9,10 @@ export interface UseAction {
     showCopyButton?: boolean;
 
     getStringValue(): string;
+
+    renderOtherTool?(): React.ReactNode;
+
+    getMockData(): string;
+
+    renderModal?(): React.ReactNode;
 }

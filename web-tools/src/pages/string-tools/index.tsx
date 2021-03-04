@@ -3,8 +3,8 @@ import { Content } from 'antd/lib/layout/layout';
 import React, { ChangeEvent, useRef, useState } from 'react';
 
 import useProvince from './useProvince'
+import useProvinceGet from './useProvinceGet';
 import useTypeGroup from './useTypeGroup'
-
 
 const layout = {
     labelCol: { span: 8 },
@@ -17,20 +17,27 @@ const tailLayout = {
 enum StringToolType {
     GROUP,
     PROVINCE_CITY,
+    PROVINCE_GET,
 }
+
+const options = [
+    { label: '词组分类', value: StringToolType.GROUP, },
+    { label: '省市合并', value: StringToolType.PROVINCE_CITY, },
+    { label: '省份获取', value: StringToolType.PROVINCE_GET, },
+]
 
 export default function StringTools() {
     const v = useRef('')
     const [s, ss] = useState<React.ReactNode>(null)
     const [lines, updateLines] = useState(0)
     const [form] = Form.useForm()
-    const resultRef = useRef<HTMLParagraphElement>(null)
     const toolType = useRef<StringToolType>(StringToolType.GROUP)
 
     // 顺序需要与 StringToolType 保持一致
     const actions = [
         useTypeGroup(),
         useProvince(),
+        useProvinceGet(),
     ]
 
     function changeValue(e: ChangeEvent<HTMLTextAreaElement>) {
@@ -51,7 +58,7 @@ export default function StringTools() {
     function copy() {
         window.getSelection()!.removeAllRanges()
 
-        const input = document.createElement('input')
+        const input = document.createElement('textarea')
         input.value = actions[toolType.current].getStringValue()
         
         input.style.position = 'fixed'
@@ -81,10 +88,14 @@ export default function StringTools() {
         toolType.current = v.target.value;
     }
 
-    const options = [
-        { label: '词组分类', value: StringToolType.GROUP, },
-        { label: '省市合并', value: StringToolType.PROVINCE_CITY, },
-    ]
+    function fillMock() {
+        const d = actions[toolType.current].getMockData();
+        v.current = d
+        updateLines(v.current.split('\n').length)
+        form.setFieldsValue({
+            originData: d,
+        })
+    }
 
     return (
         <Layout style={{display: 'flex', flexDirection: 'column', height: '100%'}}>
@@ -112,17 +123,23 @@ export default function StringTools() {
                         >
                             <Input.TextArea style={{width: 200}} rows={6} onChange={changeValue} />
                         </Form.Item>
-                        
+                        {
+                            process.env.NODE_ENV !== 'production' ? <Form.Item {...tailLayout}>
+                                <Button type="primary" onClick={fillMock}>
+                                填入 mock 数据
+                                </Button>
+                            </Form.Item> : null
+                        }
                         <Form.Item {...tailLayout}>
                             <Button type="primary" onClick={compute}>
                             2-点击按钮
                             </Button>
                         </Form.Item>
                     </Form>
-                    
-                    
                 </Content>
+
                 <div style={{marginLeft: 16, marginRight: 16, width: 1, backgroundColor: '#e8e8e8'}} />
+
                 <Content style={{flex: 1}}>
                     <h2 style={{marginBottom: 40, textAlign: 'center', fontSize: 28}}>二、结果输出</h2>
                     <Space direction="vertical" style={{width: '100%'}}>
@@ -138,6 +155,9 @@ export default function StringTools() {
                                         actions[toolType.current].showCopyButton ? <Button type="primary" onClick={copy}>拷贝数据</Button> : null
                                     }
                                     <Button type="default" onClick={clear}>清空数据</Button>
+                                    {
+                                        actions[toolType.current].renderOtherTool ? actions[toolType.current].renderOtherTool!() : null
+                                    }
                                 </Space>
                             </div> : <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
                                 <Empty description='木有数据' image={Empty.PRESENTED_IMAGE_SIMPLE} />
@@ -147,13 +167,6 @@ export default function StringTools() {
                     </Space>
                 </Content>
             </Layout>
-            
-            {/* <Sider style={{marginLeft: 20, width: 100, backgroundColor: 'white', padding: 16,}}>
-                <p>
-                    示例数据：
-                </p>
-                <p style={{whiteSpace: 'pre-wrap', height: 300, overflow: 'auto'}}>{tip}</p>
-            </Sider> */}
         </Layout>
     )
 }

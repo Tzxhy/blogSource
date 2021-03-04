@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { getMostTypes } from '../../services/getMostTypes';
 import { UseAction } from './interface';
+import { TYPE_GROUP } from './mockData';
 
 
 const useTypeGroup: () => UseAction = function() {
@@ -36,6 +37,7 @@ const useTypeGroup: () => UseAction = function() {
         compute,
         showCopyButton: false,
         getStringValue: () => '',
+        getMockData: () => TYPE_GROUP,
     }
 }
 

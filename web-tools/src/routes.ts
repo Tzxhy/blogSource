@@ -16,6 +16,8 @@ export const routers = [
         path: '/string-tool',
         page: StringTools,
         icon: PieChartOutlined,
+        exact: true,
+        menu: true,
     },
 ]
 
