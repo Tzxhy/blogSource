@@ -5,6 +5,7 @@ import React, { ChangeEvent, useRef, useState } from 'react';
 import useProvince from './useProvince'
 import useProvinceGet from './useProvinceGet';
 import useTypeGroup from './useTypeGroup'
+import useSpecialChar from './useSpecialChar'
 
 const layout = {
     labelCol: { span: 8 },
@@ -18,12 +19,14 @@ enum StringToolType {
     GROUP,
     PROVINCE_CITY,
     PROVINCE_GET,
+    REMOVE_SPECIAL_CHAR,
 }
 
 const options = [
     { label: '词组分类', value: StringToolType.GROUP, },
     { label: '省市合并', value: StringToolType.PROVINCE_CITY, },
     { label: '省份获取', value: StringToolType.PROVINCE_GET, },
+    { label: '特殊字符', value: StringToolType.REMOVE_SPECIAL_CHAR, },
 ]
 
 export default function StringTools() {
@@ -38,6 +41,7 @@ export default function StringTools() {
         useTypeGroup(),
         useProvince(),
         useProvinceGet(),
+        useSpecialChar(),
     ]
 
     function changeValue(e: ChangeEvent<HTMLTextAreaElement>) {

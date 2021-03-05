@@ -260,8 +260,13 @@ const PROVINCE_GET = `北京
 const TYPE_GROUP = `今天很快乐
 明天很快乐`;
 
+const SPECIAL_CHAR = `茅台酒现在多少钱
+茅台酒、五粮液价格
+现在有卖茅台吗？`
+
 export {
     PROVINCE,
     TYPE_GROUP,
     PROVINCE_GET,
+    SPECIAL_CHAR,
 }
