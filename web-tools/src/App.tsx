@@ -2,7 +2,7 @@
 import {
     Switch,
     Route,
-    BrowserRouter as Router,
+    HashRouter as Router,
     Link,
     Redirect,
 } from 'react-router-dom';
@@ -19,7 +19,7 @@ import Layout, { Content } from 'antd/lib/layout/layout';
 import Sider from 'antd/lib/layout/Sider';
 import { SIDEBAR_COLLAPSED } from './constants/key';
 
-const BASE_PATH = '/web-tools';
+const BASE_PATH = '/';
 
 function App() {
     const [collapsed, setCollapsed] = useState(localStorage.getItem(SIDEBAR_COLLAPSED) === 'true');
