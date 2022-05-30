@@ -34,6 +34,8 @@ export default function RenamePage() {
 	}, []);
 	const [convertedValue, setConvertedValue] = useState('');
 	const [nowAllValue, setNowAllValue] = useState(initAllValue);
+	const nowAllValueRef = useRef<string[]>();
+    nowAllValueRef.current = nowAllValue;
 	const updateLocalSearch = (v: string) => {
 		const newArr = [...nowAllValue, v];
 		newArr.sort((a, b) => a > b ? 1 : -1);
@@ -97,16 +99,12 @@ export default function RenamePage() {
 		}, 300);
     }
 
-	
-	useEffect(() => {
-		const save = () => {
-			localStorage.setItem(STORAGE_KEY, JSON.stringify(nowAllValue));
-		};
-		window.addEventListener('beforeunload', save);
-		return () => {
-			window.removeEventListener('beforeunload', save);
-		}
-	}, [nowAllValue]);
+    useEffect(() => {
+        return () => {
+            console.log('缓存');
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(nowAllValueRef.current));
+        }
+    }, []);
 
 	const resetLocalStorage = () => {
 		localStorage.setItem(STORAGE_KEY, '[]');
