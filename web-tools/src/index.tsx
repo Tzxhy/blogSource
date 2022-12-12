@@ -2,10 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import { ConfigProvider } from 'antd';
+
+import moment from 'moment';
+import 'moment/locale/zh-cn';
+import zhCN from 'antd/lib/locale/zh_CN';
+
+moment.locale('zh-cn')
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+	<ConfigProvider locale={zhCN}>
+
+    	<App />
+	</ConfigProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

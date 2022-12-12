@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 
-import { Row, Form, Input, message, Checkbox, Col, Button } from 'antd';
+import { Row, Form, Input, message, Checkbox, Col, Button, Typography } from 'antd';
 
 const { TextArea } = Input;
 
@@ -94,7 +94,9 @@ export default function RenamePage() {
         input.remove()
 
 		setTimeout(() => {
+			// @ts-ignore
 			inputRef.current?.focus();
+			// @ts-ignore
 			inputRef.current?.select?.();
 		}, 300);
     }
@@ -111,10 +113,15 @@ export default function RenamePage() {
 		setNowAllValue([]);
 	}
 
-	const inputRef = useRef<Input | null>(null);
+	const inputRef = useRef<typeof Input | null>(null);
 
 	return (
 		<div style={{marginTop: 100}}>
+			<Row>
+				<Col offset={4}>
+					<Typography.Title level={2}>将不规则字符串转换为可以当作文件名的字符串，防止因操作系统因素而改变名称</Typography.Title>
+				</Col>
+			</Row>
 			<Form
 				name='basic'
 				labelCol={{ span: 4 }}
@@ -128,6 +135,7 @@ export default function RenamePage() {
 					name='original'
 					rules={[{ required: true, message: '输入原始值' }]}
 				>
+					{/* @ts-ignore */}
 					<Input ref={inputRef} placeholder='请直接粘贴，不要手动编写' />
 				</Form.Item>
 				<Form.Item
