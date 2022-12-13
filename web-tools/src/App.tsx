@@ -40,13 +40,12 @@ function App() {
                     mode="inline"
                     theme="dark"
                     inlineCollapsed={false}
-                    >
-                        {
-                            routers.filter(r => r.menu).map((route, idx) => <Menu.Item key={route.path} icon={route.icon && React.createElement(route.icon)}>
-                                <Link to={route.path}>{route.title}</Link>
-                            </Menu.Item>)
-                        }
-                </Menu>
+					items={routers.filter(r => r.menu).map(i => ({
+						key: i.title,
+						label: <Link to={i.path}>{i.title}</Link>,
+						icon: i.icon && React.createElement(i.icon),
+					}))}
+                />
             </Sider>
             <Content style={{flexGrow: 1, padding: 16, overflow: 'auto'}}>
                 <Switch>

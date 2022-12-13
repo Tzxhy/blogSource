@@ -24,7 +24,7 @@ export const routers = [
         menu: true,
     },
 	{
-        title: '成功公积金测算',
+        title: '成都公积金测算',
         path: '/gong-ji-jin',
         page: GongJiJinTools,
         icon: PlusOutlined,
