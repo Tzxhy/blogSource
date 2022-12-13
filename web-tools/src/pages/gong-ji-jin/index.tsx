@@ -7,6 +7,19 @@ import { getCacheData, getFactorCacheData, getLoanAmount, isCacheData, setCacheD
 
 
 export default function GongJiJinPage() {
+
+	const form = createRef<FormInstance>();
+
+	const [cacheData, updateCacheData] = useState(isCacheData());
+	const [factor, setFactor] = useState(getFactorCacheData() + '');
+
+	useEffect(() => {
+		setShouldCacheData(cacheData);
+	}, [cacheData]);
+	useEffect(() => {
+		setFactorCacheData(Number(factor));
+	}, [factor]);
+
 	const onFinish = (values: any) => {
 		const list = values.data.slice();
 
@@ -15,23 +28,11 @@ export default function GongJiJinPage() {
 			month: i.month.format('YYYY-MM'),
 		})).reverse();
 
-		const v = getLoanAmount(targetList);
+		const v = getLoanAmount(targetList, Number(factor));
 
 		setLoan(v);
 
 	};
-
-	const form = createRef<FormInstance>();
-
-	const [cacheData, updateCacheData] = useState(isCacheData());
-	const [factor, setFactor] = useState(getFactorCacheData());
-
-	useEffect(() => {
-		setShouldCacheData(cacheData);
-	}, [cacheData]);
-	useEffect(() => {
-		setFactorCacheData(factor);
-	}, [factor]);
 
 	useEffect(() => {
 		if (cacheData) {
@@ -159,7 +160,7 @@ export default function GongJiJinPage() {
 						offset: 0,
 					}}>
 						<Input value={factor} onChange={e => {
-							setFactor(Number(e.target.value))
+							setFactor(e.target.value)
 						}} />
 					</Form.Item>
 				</Col>
