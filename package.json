@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "yarn build-hexo && yarn build-web",
-    "build-hexo": "hexo generate --config _config.next.yml",
+    "build-hexo": "hexo generate --config _config.next.yml && node scripts/cp.js",
     "build-web": "cd web-tools && yarn && yarn build",
     "clean": "hexo clean",
     "start": "hexo server --config _config.next.yml",
