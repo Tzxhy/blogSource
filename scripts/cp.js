@@ -3,4 +3,4 @@ const {
 } = require('child_process');
 
 
-execSync('cp -r ./source/home/* public')
+execSync('cp -r ./source/home/* ./public')
