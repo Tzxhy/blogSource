@@ -8,3 +8,4 @@ _config.yml
 properties
 cache
 install-state.gz
+db.json
