@@ -1,6 +1,8 @@
 const {
     execSync,
 } = require('child_process');
+const path = require('path')
 
-
-execSync('cp -r ./source/home/* ./public')
+const c = `cp ${path.resolve('source', 'home', '*')} ${path.resolve('public')}`;
+console.log('c: ', c);
+execSync(c)
