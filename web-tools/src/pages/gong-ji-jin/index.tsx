@@ -1,7 +1,7 @@
-import React, { createRef, useEffect, useMemo, useRef, useState } from 'react';
+import { createRef, useEffect, useState } from 'react';
 
 import moment from 'moment';
-import { Row, Form, Input, message, Checkbox, Col, Button, Typography, Space, DatePicker, Select, InputNumber, FormInstance, Switch } from 'antd';
+import { Row, Form, Input, Col, Button, Space, DatePicker, Select, InputNumber, FormInstance, Switch } from 'antd';
 import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons';
 import { getCacheData, getFactorCacheData, getLoanAmount, isCacheData, setCacheData, setFactorCacheData, setShouldCacheData } from './utils';
 
@@ -42,6 +42,7 @@ export default function GongJiJinPage() {
 				month: i.month ? moment(i.month) : null,
 			}))})
 		}
+	// eslint-disable-next-line
 	}, []);
 
 	const onChange = (_: any, values: any) => {

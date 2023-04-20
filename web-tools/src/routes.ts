@@ -32,5 +32,5 @@ export const routers = [
         menu: true,
     },
 ]
-
+// eslint-disable-next-line
 export default {};
