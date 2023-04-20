@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "hexo generate --config _config.next.yml && yarn build-web",
+    "build": "yarn build-hexo && yarn build-web",
+    "build-hexo": "hexo generate --config _config.next.yml",
     "build-web": "cd web-tools && yarn && yarn build",
     "clean": "hexo clean",
     "start": "hexo server --config _config.next.yml",
@@ -18,6 +19,7 @@
     "hexo-generator-category": "^2.0.0",
     "hexo-generator-index": "^3.0.0",
     "hexo-generator-searchdb": "^1.4.1",
+    "hexo-generator-sitemap": "^3.0.1",
     "hexo-generator-tag": "^2.0.0",
     "hexo-optimize": "^3.3.0",
     "hexo-pangu": "^0.2.2",

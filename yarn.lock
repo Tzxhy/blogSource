@@ -1559,6 +1559,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"hexo-generator-sitemap@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "hexo-generator-sitemap@npm:3.0.1"
+  dependencies:
+    hexo-util: ^2.1.0
+    micromatch: ^4.0.2
+    nunjucks: ^3.1.6
+  checksum: 999c808c077aa8138f5fed53446dc455d3646c14b47ea6015ea551bcfa91dad46b5c3c16dce4600dff2ccdfd85fcb1c62b77f9044bc4b620e9892c456054e8a8
+  languageName: node
+  linkType: hard
+
 "hexo-generator-tag@npm:^2.0.0":
   version: 2.0.0
   resolution: "hexo-generator-tag@npm:2.0.0"
@@ -1682,6 +1693,7 @@ __metadata:
     hexo-generator-category: ^2.0.0
     hexo-generator-index: ^3.0.0
     hexo-generator-searchdb: ^1.4.1
+    hexo-generator-sitemap: ^3.0.1
     hexo-generator-tag: ^2.0.0
     hexo-optimize: ^3.3.0
     hexo-pangu: ^0.2.2
@@ -1709,7 +1721,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hexo-util@npm:2.7.0, hexo-util@npm:^2.0.0, hexo-util@npm:^2.7.0":
+"hexo-util@npm:2.7.0, hexo-util@npm:^2.0.0, hexo-util@npm:^2.1.0, hexo-util@npm:^2.7.0":
   version: 2.7.0
   resolution: "hexo-util@npm:2.7.0"
   dependencies:
@@ -2575,7 +2587,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nunjucks@npm:^3.2.2, nunjucks@npm:^3.2.3":
+"nunjucks@npm:^3.1.6, nunjucks@npm:^3.2.2, nunjucks@npm:^3.2.3":
   version: 3.2.4
   resolution: "nunjucks@npm:3.2.4"
   dependencies:
