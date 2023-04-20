@@ -6,3 +6,5 @@ node_modules/
 .deploy*/
 _config.yml
 properties
+cache
+install-state.gz
