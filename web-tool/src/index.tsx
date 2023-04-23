@@ -14,7 +14,7 @@ ReactDOM.render(
   <React.StrictMode>
 	<ConfigProvider locale={zhCN}>
 
-    	<App />
+		<App />
 	</ConfigProvider>
   </React.StrictMode>,
   document.getElementById('root')

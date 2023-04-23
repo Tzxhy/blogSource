@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { Row, Form, Input, message, Checkbox, Col, Button, Typography } from 'antd';
 
