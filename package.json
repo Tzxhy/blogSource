@@ -7,7 +7,7 @@
     "build-hexo": "hexo generate --config _config.next.yml && node scripts/cp.js",
     "build-web": "cd web-tool && yarn && yarn build",
     "clean": "hexo clean",
-    "start": "hexo server --config _config.next.yml",
+    "start": "hexo server --draft --config _config.next.yml",
     "new": "hexo new"
   },
   "hexo": {
