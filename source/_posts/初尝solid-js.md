@@ -184,6 +184,41 @@ function App() {
 ```
 `Show` 组件，接收一个 `whe`n 参数和 `fallback` 参数，用于控制是否显示直接子组件。
 
+需要注意的是，并不是说 `{ show ? <SomeComponent /> : null}` 这种形式就用不了了，这种也是可以的。如：
+```tsx
+function App() {
+  const [loggedIn, setLoggedIn] = createSignal(false);
+  const toggle = () => setLoggedIn(!loggedIn())
+  
+  return (
+    <>
+      <button onClick={toggle}>切换</button>
+      {
+        loggedIn() ? 'logined' : 'not login'
+      }
+    </>
+  );
+}
+```
+
+会被编译为：
+```tsx
+function App() {
+  const [loggedIn, setLoggedIn] = createSignal(false);
+
+  const toggle = () => setLoggedIn(!loggedIn());
+
+  return [(() => {
+    const _el$ = _tmpl$.cloneNode(true);
+
+    _el$.$$click = toggle;
+    return _el$;
+  })(), _$memo(() => loggedIn() ? 'logined' : 'not login')];
+}
+```
+
+所以我们知道，在 `solid` 中，三目运算符可能被编译成 `memo` 函数（具体看是否是依赖 `Signal`）。
+
 ### Switch
 当存在多个条件以上时，为了避免使用 `Show` 而导致的多层嵌套，可以使用 `Switch`:
 ```tsx
@@ -203,8 +238,15 @@ function App() {
 }
 ```
 
+### 循环
+对于循环，熟悉 `react` 的同学可能会问：能用 `map` 吗？如果您的数组是`静态`的，则使用 `map` 没有任何问题。但是如果你在一个 `signal` 或 `响应属性`上循环，`map` 是低效的：如果数组因任何原因发生变化，整个 `map` 将重新运行，所有节点都将重新创建。
+
+`<For>` 和 `<Index>` 都提供了比这更智能的循环解决方案 它们将每个渲染的节点与数组中的一个元素耦合在一起，因此当数组元素发生变化时，只有相应的节点会重新渲染。
+
+`<Index>` 将通过索引做到这一点：每个节点对应于数组中的一个索引；`<For>` 将通过值来执行此操作：每个节点对应于数组中的一条数据。这就是为什么在回调中，`<Index>` 给你一个 `item` 的 `signal`：每个 `item` 的索引被认为是固定的，但该索引处的数据可以改变。另一方面，`<For>` 给你一个`索引 signal`：`item` 的内容被认为是固定的，但如果元素在数组中移动，它可以移动。
+
 ### For
-对于循环的实现，也不一样：
+
 ```tsx
 function App() {
   const [cats, setCats] = createSignal([
